@@ -4,6 +4,8 @@ using System.Text;
 
 namespace Order.Management
 {
+    // Please check Painting Report for more comments on this report as a whole.
+
     class CuttingListReport : Order
     {
         public int tableWidth = 20;
@@ -18,9 +20,13 @@ namespace Order.Management
         public override void GenerateReport()
         {
             Console.WriteLine("\nYour cutting list has been generated: ");
-            Console.WriteLine(base.ToString());
+            Console.WriteLine(base.ToString()); // If we update the class to inherit report, ensure that a relevant ToString method is called.
             generateTable();
         }
+
+        /* Similar to my comment for the OrderShapeDetail functions below, these are all hardcoded to accept only the current list of strings and objects. 
+         * These should instead iterate through the OrderedBlocks list and its flagged attributes to ensure that it prints all appropriate values, regardless of what else is added in the future.
+         */
         public void generateTable()
         {
             PrintLine();

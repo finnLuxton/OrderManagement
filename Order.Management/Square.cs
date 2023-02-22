@@ -6,6 +6,7 @@ namespace Order.Management
 {
     class Square : Shape
     {
+        // Please refer to Circle comments.
 
         public int SquarePrice = 1;
 

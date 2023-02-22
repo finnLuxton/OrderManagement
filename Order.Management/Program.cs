@@ -8,16 +8,21 @@ namespace Order.Management
         // Main entry
         static void Main(string[] args)
         {
-            var (customerName, address, dueDate) = CustomerInfoInput();
+            var (customerName, address, dueDate) = CustomerInfoInput(); // We should have a data structure for the returned parameters here. What if customer wants additional info, should support more parameters
 
             var orderedShapes = CustomerOrderInput();
 
-            InvoiceReport(customerName, address, dueDate, orderedShapes);
+            // All three reports will be called regardless with the exact same parameters, we could condense this into a single function.
+            InvoiceReport(customerName, address, dueDate, orderedShapes); 
 
             CuttingListReport(customerName, address, dueDate, orderedShapes);
 
             PaintingReport(customerName, address, dueDate, orderedShapes);
         }
+
+        // The below 3 functions can all be refactored into a single function that takes in a parameter of item type. It could also take in a list of both shapes and colours to create the appropriate output. 
+        // This would ensure scalability into the future. The return types would need to differ based on function, or instead it can return a list of List<shape> objects.
+        // TODO Finn make function here
         
         // Order Circle Input
         public static Circle OrderCirclesInput()
@@ -62,17 +67,19 @@ namespace Order.Management
         }
 
         // User Console Input
-        public static string userInput()
+        public static string userInput() // This functions converts dates into strings, which can cause issues later if we need to interpert a DateTime variable.
         {
             string input = Console.ReadLine();
             while (string.IsNullOrEmpty(input))
             {
-                Console.WriteLine("please enter valid details");
+                Console.WriteLine("please enter valid details"); // There is no error catching, handling or logging here apart from empty line.
                 input = Console.ReadLine();
 
             }
             return input;
         }
+
+        // The below three functions all have the same function and return nothing. These could be condensed. 
 
         // Generate Painting Report 
         private static void PaintingReport(string customerName, string address, string dueDate, List<Shape> orderedShapes)
@@ -114,7 +121,8 @@ namespace Order.Management
             Triangle triangle = OrderTrianglesInput();
             Circle circle = OrderCirclesInput();
 
-            var orderedShapes = new List<Shape>();
+            // If you have the OrderInput functions above return List<Shape>, you could append the output to this List, making the next 3 lines redundant.
+            var orderedShapes = new List<Shape>(); 
             orderedShapes.Add(square);
             orderedShapes.Add(triangle);
             orderedShapes.Add(circle);

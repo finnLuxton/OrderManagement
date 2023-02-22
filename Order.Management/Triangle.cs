@@ -6,6 +6,7 @@ namespace Order.Management
 {
     class Triangle : Shape
     {
+        // Please refer to Circle comments.
         public int TrianglePrice = 2;
         public Triangle(int numberOfRedTriangles, int numberOfBlueTriangles, int numberOfYellowTriangles)
         {
