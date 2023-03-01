@@ -22,12 +22,12 @@ namespace Order.Management
         // This would ensure scalability into the future. The return types would need to differ based on function, or instead it can return a list of List<shape> objects.
         // TODO Finn make function here
         
-        public static Shape OrderInput(string shapeType, string shapeColour)
-        {
-            // This function here should care about the automatically generated list of shape/colours from Json, and ask for an input for each individual combination.
-            // So, before writing this, ensure the json entry is fixed.
-            //Console.Write("\nPlease input the number of ")
-        }
+        //public static Shape OrderInput(string shapeType, string shapeColour)
+        //{
+        //    // This function here should care about the automatically generated list of shape/colours from Json, and ask for an input for each individual combination.
+        //    // So, before writing this, ensure the json entry is fixed.
+        //    //Console.Write("\nPlease input the number of ")
+        //}
 
         // Order Circle Input
         public static Circle OrderCirclesInput()
