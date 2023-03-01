@@ -12,7 +12,7 @@ namespace Order.Management
         public int OrderNumber { get; set; } // Order Number is never set. It should be a unique identifier, ideally sequentially. If there was a database connection, that could be used.
         public List<Shape> OrderedBlocks { get; set; }
 
-        public abstract void GenerateReport();
+        //public abstract void GenerateReport();
 
         /* This function needs to be overidden, as object.ToString is already inherited.
            This also is hard coded, and does not take into account any future attributes that may be added.
