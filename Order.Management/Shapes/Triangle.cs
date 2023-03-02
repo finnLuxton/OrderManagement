@@ -18,20 +18,20 @@ namespace Order.Management
             base.NumberOfYellowShape = numberOfYellowTriangles;
         }
 
-        public override int Total()
+        public override decimal Total()
         {
             return RedTrianglesTotal() + BlueTrianglesTotal() + YellowTrianglesTotal();
         }
 
-        public int RedTrianglesTotal()
+        public decimal RedTrianglesTotal()
         {
             return (base.NumberOfRedShape * Price);
         }
-        public int BlueTrianglesTotal()
+        public decimal BlueTrianglesTotal()
         {
             return (base.NumberOfBlueShape * Price);
         }
-        public int YellowTrianglesTotal()
+        public decimal YellowTrianglesTotal()
         {
             return (base.NumberOfYellowShape * Price);
         }

@@ -20,22 +20,22 @@ namespace Order.Management
             base.NumberOfYellowShape = numberOfYellowSquares;
         }
 
-        public override int Total()
+        public override decimal Total()
         {
             return RedSquaresTotal() + BlueSquaresTotal() + YellowSquaresTotal();
         }
 
-        public int RedSquaresTotal()
+        public decimal RedSquaresTotal()
         {
             return (base.NumberOfRedShape * Price);
         }
-        public int BlueSquaresTotal()
+        public decimal BlueSquaresTotal()
         {
             return (base.NumberOfBlueShape * Price);
         }
-        public int YellowSquaresTotal()
+        public decimal YellowSquaresTotal()
         {
             return (base.NumberOfYellowShape * Price);
         }
     }
-}
+} 

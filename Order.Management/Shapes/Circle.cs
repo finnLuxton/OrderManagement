@@ -26,21 +26,21 @@ namespace Order.Management
             base.NumberOfBlueShape = blue;
             base.NumberOfYellowShape = yellow;
         }
-        public override int Total() // These three functions that all perform nearly the same task, so they should be condensed. They are also hard coded colour values, we should clear the dependencies here.
+        public override decimal Total() // These three functions that all perform nearly the same task, so they should be condensed. They are also hard coded colour values, we should clear the dependencies here.
         {
             return RedCirclesTotal() + BlueCirclesTotal() + YellowCirclesTotal();
         }
 
         // The below three functions should be condensed into one 
-        public int RedCirclesTotal()
+        public decimal RedCirclesTotal()
         {
             return (base.NumberOfRedShape * Price);
         }
-        public int BlueCirclesTotal()
+        public decimal BlueCirclesTotal()
         {
             return (base.NumberOfBlueShape * Price);
         }
-        public int YellowCirclesTotal()
+        public decimal YellowCirclesTotal()
         {
             return (base.NumberOfYellowShape * Price);
         }

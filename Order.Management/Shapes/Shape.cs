@@ -7,7 +7,7 @@ namespace Order.Management
     abstract class Shape
     {
         public string Name { get; set; }
-        public int Price { get; set; } // This should be a decimal for currency values.
+        public decimal Price { get; set; } 
         public int AdditionalCharge { get; set; }
         public int NumberOfRedShape { get; set; } // These are hard coded values for shapes. We should rewrite this class to support multiple colours.
         public int NumberOfBlueShape { get; set; }
@@ -21,7 +21,7 @@ namespace Order.Management
         {
             return NumberOfRedShape * AdditionalCharge;
         }
-        public abstract int Total();
+        public abstract decimal Total();
 
     }
 }

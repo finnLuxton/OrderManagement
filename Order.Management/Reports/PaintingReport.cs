@@ -10,9 +10,8 @@ namespace Order.Management
        constructor can be replaced with this. to deal with the required instances. 
      */
 
-    class PaintingReport : Order // After creating a report class, this should inherit from Report instead.
+    class PaintingReport : Report // After creating a report class, this should inherit from Report instead.
     {
-        public int tableWidth = 73;
 
         // Base is not required, should be changed to this for the current instance.
         public PaintingReport(string customerName, string customerAddress, string dueDate, List<Shape> shapes)
@@ -21,10 +20,11 @@ namespace Order.Management
             base.Address = customerAddress;
             base.DueDate = dueDate;
             base.OrderedBlocks = shapes;
+            tableWidth = 73;
         }
 
         // Base is not required, should be changed to this for the current instance.
-        public override void GenerateReport()
+        public void GenerateReport()
         {
             Console.WriteLine("\nYour painting report has been generated: ");
             Console.WriteLine(base.ToString());
@@ -44,36 +44,5 @@ namespace Order.Management
             PrintLine();
         }
        
-        public void PrintLine()
-        {
-            Console.WriteLine(new string('-', tableWidth));
-        }
-
-        public void PrintRow(params string[] columns)
-        {
-            int width = (tableWidth - columns.Length) / columns.Length;
-            string row = "|";
-
-            foreach (string column in columns)
-            {
-                row += AlignCentre(column, width) + "|";
-            }
-
-            Console.WriteLine(row);
-        }
-
-        public string AlignCentre(string text, int width)
-        {
-            text = text.Length > width ? text.Substring(0, width - 3) + "..." : text;
-
-            if (string.IsNullOrEmpty(text))
-            {
-                return new string(' ', width);
-            }
-            else
-            {
-                return text.PadRight(width - (width - text.Length) / 2).PadLeft(width);
-            }
-        }
     }
 }

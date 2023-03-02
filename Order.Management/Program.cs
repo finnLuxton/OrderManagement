@@ -16,6 +16,9 @@ namespace Order.Management
             var orderedShapes = CustomerOrderInput();
 
             GenerateReports(customerName, address, dueDate, orderedShapes);
+            
+            // Wait for user to press a key before finishing.
+            Console.ReadKey();
         }
 
         // The below 3 functions can all be refactored into a single function that takes in a parameter of item type. It could also take in a list of both shapes and colours to create the appropriate output. 
