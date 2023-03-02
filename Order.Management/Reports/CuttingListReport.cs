@@ -30,13 +30,14 @@ namespace Order.Management
          */
         public void generateTable()
         {
-            PrintLine();
+            var printLine = PrintLine(tableWidth);
+            Console.WriteLine(printLine);
             PrintRow("        ", "   Qty   ");
-            PrintLine();
+            Console.WriteLine(printLine);
             PrintRow("Square",base.OrderedBlocks[0].TotalQuantityOfShape().ToString());
             PrintRow("Triangle", base.OrderedBlocks[1].TotalQuantityOfShape().ToString());
             PrintRow("Circle", base.OrderedBlocks[2].TotalQuantityOfShape().ToString());
-            PrintLine();
+            Console.WriteLine(printLine);
         }
 
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Order.Management
 {
-    class Triangle : Shape
+    public class Triangle : Shape
     {
         // Please refer to Circle comments.
         public int TrianglePrice = 2;

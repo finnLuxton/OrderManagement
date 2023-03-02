@@ -51,16 +51,17 @@ namespace Order.Management
         }
         public void GenerateTable()
         {
-            PrintLine();
+            var printLine = PrintLine(tableWidth);
+            Console.WriteLine(printLine);
             PrintRow("        ", "   Red   ", "  Blue  ", " Yellow "); // This does not support any future colours. This line should be printing all colours generated in the OrderedBlocks list.
-            PrintLine();
+            Console.WriteLine(printLine);
             /* Similar to my comment for the OrderShapeDetail functions below, these are all hardcoded to accept only the current list of strings and objects. 
              * These should instead iterate through the OrderedBlocks list and its flagged attributes to ensure that it prints all appropriate values, regardless of what else is added in the future.
              */
             PrintRow("Square", OrderedBlocks[0].NumberOfRedShape.ToString(), OrderedBlocks[0].NumberOfBlueShape.ToString(), OrderedBlocks[0].NumberOfYellowShape.ToString());
             PrintRow("Triangle", OrderedBlocks[1].NumberOfRedShape.ToString(), OrderedBlocks[1].NumberOfBlueShape.ToString(), OrderedBlocks[1].NumberOfYellowShape.ToString());
             PrintRow("Circle", OrderedBlocks[2].NumberOfRedShape.ToString(), OrderedBlocks[2].NumberOfBlueShape.ToString(), OrderedBlocks[2].NumberOfYellowShape.ToString());
-            PrintLine();
+            Console.WriteLine(printLine);
         }
 
         /* These three functions all share the following issues. 

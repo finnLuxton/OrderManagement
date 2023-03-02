@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Order.Management
 {
-    class Program
+    public class Program
     {
         // Main entry
         static void Main(string[] args)

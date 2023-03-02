@@ -4,13 +4,13 @@ using System.Text;
 
 namespace Order.Management
 {
-    class Report : Order
+    public class Report : Order
     {
         public int tableWidth { get; set; }
         
-        public void PrintLine()
+        public string PrintLine(int tableWidth)
         {
-            Console.WriteLine(new string('-', tableWidth));
+            return tableWidth > 0 ? new string('-', tableWidth) : "";
         }
 
         public void PrintRow(params string[] columns)

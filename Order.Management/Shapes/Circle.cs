@@ -14,7 +14,7 @@ namespace Order.Management
          a brand new class. We should ensure the functions are not dependent on hard-coded values, and are open to any number of scalable items.
     */
 
-    class Circle : Shape
+    public class Circle : Shape
     {
         public int circlePrice = 3;
         public Circle(int red, int blue, int yellow)

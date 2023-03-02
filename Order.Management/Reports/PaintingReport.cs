@@ -35,13 +35,14 @@ namespace Order.Management
         // Inconsistent naming convention. Should be changed to GenerateTable.
         public void generateTable() 
         {
-            PrintLine();
+            var printLine = PrintLine(tableWidth);
+            Console.WriteLine(printLine);
             PrintRow("        ", "   Red   ", "  Blue  ", " Yellow ");
-            PrintLine();
+            Console.WriteLine(printLine);
             PrintRow("Square", base.OrderedBlocks[0].NumberOfRedShape.ToString(), OrderedBlocks[0].NumberOfBlueShape.ToString(), OrderedBlocks[0].NumberOfYellowShape.ToString());
             PrintRow("Triangle", base.OrderedBlocks[1].NumberOfRedShape.ToString(), OrderedBlocks[1].NumberOfBlueShape.ToString(), OrderedBlocks[1].NumberOfYellowShape.ToString());
             PrintRow("Circle", base.OrderedBlocks[2].NumberOfRedShape.ToString(), OrderedBlocks[2].NumberOfBlueShape.ToString(), OrderedBlocks[2].NumberOfYellowShape.ToString());
-            PrintLine();
+            Console.WriteLine(printLine);
         }
        
     }

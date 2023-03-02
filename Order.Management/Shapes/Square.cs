@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Order.Management
 {
-    class Square : Shape
+    public class Square : Shape
     {
         // Please refer to Circle comments.
 

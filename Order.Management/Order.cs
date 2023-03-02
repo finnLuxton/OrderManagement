@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Order.Management
 {
-    abstract class Order
+    public abstract class Order
     {
         public string CustomerName { get; set; }
         public string Address { get; set; }
