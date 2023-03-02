@@ -10,6 +10,7 @@ namespace Order.Management
         {
 
             // We could import a json or header file here for the different colours, shapes and their prices here.
+                 
 
             var (customerName, address, dueDate) = CustomerInfoInput(); // We should have a data structure for the returned parameters here. What if customer wants additional info, should support more parameters
 
